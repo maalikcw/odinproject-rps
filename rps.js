@@ -1,13 +1,7 @@
-const MATCHUPS = {
-    "ROCK" : {    
-        "beats": "SCISSORS"
-    },
-    "PAPER": {
-        "beats": "ROCK"
-    },
-    "SCISSORS": {
-        "beats": "PAPER"
-    }
+const BEATS = {
+    "ROCK" : "SCISSORS",
+    "PAPER": "ROCK",
+    "SCISSORS": "PAPER"
 };
 
 const SELECTIONS = ["ROCK", "PAPER", "SCISSORS"];
@@ -28,10 +22,10 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
         return TIE;
     }
-    else if (MATCHUPS[playerSelection]["beats"] == computerSelection) {
+    else if (BEATS[playerSelection] == computerSelection) {
         return P1WIN;
     }
-    else if (MATCHUPS[computerSelection]["beats"] == playerSelection) {
+    else if (BEATS[computerSelection] == playerSelection) {
         return P2WIN;
     }
 }
